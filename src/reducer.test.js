@@ -8,7 +8,7 @@ describe('unicafe reducer', () => {
     bad: 0
   }
 
-  const verifyType = (type, valueGood, valueOk, valueBad) => {
+  const result = (type, valueGood, valueOk, valueBad) => {
     const action = {
       type: type
     }
@@ -34,15 +34,15 @@ describe('unicafe reducer', () => {
   })
 
   test('good is incremented', () => {
-    verifyType('GOOD',1, 0, 0)
+    result('GOOD',1, 0, 0)
   })
 
   test('ok is incremented', () => {
-    verifyType('OK',0,1,0)
+    result('OK',0,1,0)
   })
 
   test('bad is incremented', () => {
-    verifyType('BAD',0,0,1)
+    result('BAD',0,0,1)
   })
 
   test('reset state', () => {
@@ -52,6 +52,6 @@ describe('unicafe reducer', () => {
       bad: 3
     }
 
-    verifyType('ZERO',0,0,0)
+    result('ZERO',0,0,0)
   })
 })
